@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jamf-im:
+    build: .
+    environment:
+      - JSAM_HOSTNAME=jsam.dev
+      - JSS_URL=jss.dev:8443
+      - JSS_USERNAME=admin  # This user must have the "Infrastructure Manager" role.
+      - JSS_PASSWORD=password
+    command: ["enroll"]  # Enable this when enrolling the IM instance.
+
